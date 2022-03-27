@@ -2,7 +2,11 @@
 name = "lamedec"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["sengokyu <sengokyu+gh@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/sengokyu/python-lamedec"
+repository = "https://github.com/sengokyu/python-lamedec.git"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
