@@ -41,6 +41,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "lame-ctypes"
+version = "0.1.1"
+description = "Just Lame ctypes binding."
+category = "main"
+optional = false
+python-versions = ">=3.10,<4.0"
+
+[[package]]
 name = "more-itertools"
 version = "8.12.0"
 description = "More routines for operating on iterables, beyond itertools"
@@ -138,7 +146,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fb1de646735d5796600e25ebfb653d90d97527ea4234caef0f33aa3ea698de00"
+content-hash = "2c33266fa2dccbb8fd8d63e261642e5596996cf00af80a994b90afe405445b83"
 
 [metadata.files]
 atomicwrites = [
@@ -156,6 +164,10 @@ autopep8 = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+lame-ctypes = [
+    {file = "lame-ctypes-0.1.1.tar.gz", hash = "sha256:aa5e68c3eca60dcae8c056ce82b8fd033575c9d871ecd2b933901a2f17551c42"},
+    {file = "lame_ctypes-0.1.1-py3-none-any.whl", hash = "sha256:e8d9aa1fec38690f91ec72da1d575954b5cbccc2066f700f8c4fd771f3ec0758"},
 ]
 more-itertools = [
     {file = "more-itertools-8.12.0.tar.gz", hash = "sha256:7dc6ad46f05f545f900dd59e8dfb4e84a4827b97b3cfecb175ea0c7d247f6064"},
