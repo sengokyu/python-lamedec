@@ -50,7 +50,7 @@ python-versions = "*"
 
 [[package]]
 name = "lame-ctypes"
-version = "0.1.1"
+version = "0.1.2"
 description = "Just Lame ctypes binding."
 category = "main"
 optional = false
@@ -69,14 +69,15 @@ pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
 name = "pluggy"
-version = "0.13.1"
+version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
 category = "dev"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.6"
 
 [package.extras]
 dev = ["pre-commit", "tox"]
+testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "py"
@@ -145,7 +146,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fb81ca4d982c00d737c6d62451c3087c8e0c62613aeab72d267efbcbb2f38141"
+content-hash = "6c8564560e73b421192e0fa479d62d4f0a7d8637137546e4f0fc9172d0d713cb"
 
 [metadata.files]
 atomicwrites = [
@@ -169,16 +170,16 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 lame-ctypes = [
-    {file = "lame-ctypes-0.1.1.tar.gz", hash = "sha256:aa5e68c3eca60dcae8c056ce82b8fd033575c9d871ecd2b933901a2f17551c42"},
-    {file = "lame_ctypes-0.1.1-py3-none-any.whl", hash = "sha256:e8d9aa1fec38690f91ec72da1d575954b5cbccc2066f700f8c4fd771f3ec0758"},
+    {file = "lame-ctypes-0.1.2.tar.gz", hash = "sha256:73dec34c267f6fe656f9cb0e89732946f1c1c7bc66aff8f0867b0d0c73a5a0b2"},
+    {file = "lame_ctypes-0.1.2-py3-none-any.whl", hash = "sha256:826818ac6a811455abc1a048ee5cc388b5f54f81406685bd941ba4d39ae130c9"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
 ]
 pluggy = [
-    {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
-    {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
+    {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
+    {file = "pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
 ]
 py = [
     {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
