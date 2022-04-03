@@ -5,7 +5,7 @@ from ._sample_mp3 import sample_mp3
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == '0.1.1'
 
 
 def test_decode():
