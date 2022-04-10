@@ -3,10 +3,6 @@ from lamedec import __version__, decode
 from ._sample_mp3 import sample_mp3
 
 
-def test_version():
-    assert __version__ == '0.1.1'
-
-
 def test_decode():
     # Given
     src = io.BytesIO(bytes(sample_mp3))
