@@ -1,26 +1,26 @@
 from io import BytesIO
-from lamedec.hipdecoder import HipDecoder
+from lamedec.mp3reader import Mp3Reader
 from ._sample_mp3 import sample_mp3
 
 
-def test_create():
+def test_open():
     # Given
     mp3 = BytesIO(bytes(sample_mp3))
 
     # When
-    with HipDecoder.create(mp3) as instance:
+    with Mp3Reader.open(mp3) as instance:
 
         # Then
-        assert isinstance(instance, HipDecoder)
+        assert isinstance(instance, Mp3Reader)
 
 
-def test_parse_header():
+def test_header():
     # Given
     mp3 = BytesIO(bytes(sample_mp3))
 
-    with HipDecoder.create(mp3) as instance:
+    with Mp3Reader.open(mp3) as instance:
         # When
-        mp3data = instance.parse_header()
+        mp3data = instance.header()
 
     # Then
     assert mp3data.stereo == 2
@@ -34,18 +34,17 @@ def test_parse_header():
     assert mp3data.framenum == 0
 
 
-def test_decode():
+def test_all_frames():
     # Given
     mp3 = BytesIO(bytes(sample_mp3))
-    with HipDecoder.create(mp3) as instance:
-        count = 0
+    count = 0
+
+    with Mp3Reader.open(mp3) as instance:
+        _ = instance.header()
 
         # When
-        for (l, r) in instance.decode():
-
-            # Then
-            # TODO: efficient test
+        for (l, r) in instance.all_frames():
             assert l is not None
             assert r is not None
             count += 1
-        assert count == 2
+    assert count == 30

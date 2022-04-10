@@ -1,5 +1,4 @@
 import io
-import wave
 from lamedec import __version__, decode
 from ._sample_mp3 import sample_mp3
 

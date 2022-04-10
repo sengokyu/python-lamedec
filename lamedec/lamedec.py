@@ -1,11 +1,8 @@
-from ctypes import *
 from io import RawIOBase
 from struct import pack
 import wave
-from lame_ctypes import *
-from wave import Wave_write
 
-from .hipdecoder import HipDecoder
+from .mp3reader import Mp3Reader
 
 
 def decode(src: RawIOBase, dst):
@@ -13,16 +10,20 @@ def decode(src: RawIOBase, dst):
     Read MP3 from src and output PCM to dst.
     """
     with (
-        HipDecoder.create(src) as hip,
+        Mp3Reader.open(src) as mp3,
         wave.open(dst, "wb") as wav,
     ):
-        header = hip.parse_header()
+        header = mp3.header()
 
         wav.setnchannels(header.stereo)
         wav.setsampwidth(2)
         wav.setframerate(header.samplerate)
 
-        for (pcm_l, pcm_r) in hip.decode():
-            for (l, r) in zip(pcm_l, pcm_r):
-                wav.writeframes(pack("<h", l))
-                wav.writeframes(pack("<h", r))
+        if header.stereo == 2:
+            for (pcm_l, pcm_r) in mp3.all_frames():
+                for (l, r) in zip(pcm_l, pcm_r):
+                    wav.writeframes(pack("<h", l))
+                    wav.writeframes(pack("<h", r))
+        else:
+            for (pcm_l, pcm_r) in mp3.all_frames():
+                wav.writeframes(pack(f"<{len(pcm_l)}h", *pcm_l))
